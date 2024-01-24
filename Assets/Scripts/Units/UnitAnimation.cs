@@ -16,7 +16,7 @@ public class UnitAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ChooseAnimation(unit);
     }
     
     private void ChooseAnimation(Unit u)
