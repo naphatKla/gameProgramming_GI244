@@ -5189,7 +5189,7 @@ Animator:
   m_GameObject: {fileID: 186328}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 409520c9226982345a49c9803624f208, type: 3}
-  m_Controller: {fileID: 9100000, guid: 9b5f3dc79387670409bc8aac8597ddd2, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea87657080465a34da6a309bc8cc930d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -5267,6 +5267,7 @@ MonoBehaviour:
   maxWpnDamage: 0
   armour: 0
   visualRange: 0
+  State: 0
 --- !u!114 &3942890404042536454
 MonoBehaviour:
   m_ObjectHideFlags: 0
