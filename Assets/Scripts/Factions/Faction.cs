@@ -16,18 +16,17 @@ public enum Nation
 public class Faction : MonoBehaviour
 {
     [SerializeField] private Nation nation;
-    public Nation Nation { get { return nation; } }
-
-    [Header("Resources")]
-    [SerializeField] private int food;
+    [Header("Resources")] [SerializeField] private int food;
     [SerializeField] private int wood;
     [SerializeField] private int gold;
     [SerializeField] private int stone;
+
+    public Nation Nation => nation;
+    public int Food { get => food; set => food = value;}
+    public int Wood { get => wood; set => wood = value; }
+    public int Gold { get => gold; set => gold = value; }
+    public int Stone { get => stone; set => stone = value; }
     
-    public int Food { get { return food; } set {  food = value; } }
-    public int Wood { get { return wood; } set { wood = value; } }
-    public int Gold { get { return gold; } set { gold = value; } }
-    public int Stone { get { return stone; } set { stone = value; } }
     void Start()
     {
         
