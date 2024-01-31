@@ -24,6 +24,10 @@ public class Unit : MonoBehaviour
     [SerializeField] private int maxWpnDamage;
     [SerializeField] private int armour;
     [SerializeField] private float visualRange;
+    [SerializeField] private UnitState state;
+    [SerializeField] private Faction faction;
+    [SerializeField] private GameObject selectionVisual;
+    
 
     public int ID { get => id; set => id = value; }
     public string UnitName => unitName;
@@ -35,7 +39,9 @@ public class Unit : MonoBehaviour
     public int MaxWpnDamage => maxWpnDamage;
     public int Armour => armour;
     public float VisualRange => visualRange;
-    public UnitState State;
+    public UnitState State { get => state; set => state = value; }
+    public Faction Faction => faction;
+    public GameObject SelectionVisual => selectionVisual;
 
     private void Start()
     {
@@ -43,5 +49,11 @@ public class Unit : MonoBehaviour
 
     private void Update()
     {
+    }
+    
+    public void ToggleSelectionVisual(bool flag)
+    {
+        if (selectionVisual != null)
+            selectionVisual.SetActive(flag);
     }
 }
