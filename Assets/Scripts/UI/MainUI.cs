@@ -6,6 +6,8 @@ using UnityEngine;
 public class MainUI : MonoBehaviour
 {
     public static MainUI instance;
+    [SerializeField] private GameObject selectionMarker;
+    public GameObject SelectionMarker => selectionMarker;
     private void Awake()
     {
         instance = this;

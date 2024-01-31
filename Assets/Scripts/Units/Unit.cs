@@ -27,6 +27,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private UnitState state;
     [SerializeField] private Faction faction;
     [SerializeField] private GameObject selectionVisual;
+    private NavMeshAgent navAgent;
     
 
     public int ID { get => id; set => id = value; }
@@ -42,18 +43,56 @@ public class Unit : MonoBehaviour
     public UnitState State { get => state; set => state = value; }
     public Faction Faction => faction;
     public GameObject SelectionVisual => selectionVisual;
+    public NavMeshAgent NavAgent => navAgent;
 
     private void Start()
     {
+        navAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
+        switch (state)
+        {
+            case UnitState.Move:
+                MoveUpdate();
+                break;
+        }
     }
     
     public void ToggleSelectionVisual(bool flag)
     {
         if (selectionVisual != null)
             selectionVisual.SetActive(flag);
+    }
+    
+    public void SetState(UnitState toState)
+    {
+        state = toState;
+
+        if (state == UnitState.Idle)
+        {
+            navAgent.isStopped = true;
+            navAgent.ResetPath();
+        }
+    }
+    
+    public void MoveToPosition(Vector3 dest)
+    {
+        if (navAgent != null)
+        {
+            navAgent.SetDestination(dest);
+            navAgent.isStopped = false;
+        }
+
+        SetState(UnitState.Move); 
+    }
+    
+    private void MoveUpdate()
+    {
+        float distance = Vector3.Distance(transform.position, navAgent.destination);
+
+        if (distance <= 1f)
+            SetState(UnitState.Idle);
     }
 }
