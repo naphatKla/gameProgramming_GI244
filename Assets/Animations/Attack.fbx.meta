@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2c88289780b293a4b86367fcf966df17
+guid: 6eb57f1628e59d249b7dd793160d69c5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable:
@@ -419,7 +419,7 @@ ModelImporter:
     second: RightHandProp
   - first:
       74: 7400000
-    second: AssaultRifle@Shot01
+    second: Rifle@Shot01
   - first:
       95: 9500000
     second: //RootNode
@@ -453,7 +453,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: AssaultRifle@Shot01
+      name: Rifle@Shot01
       takeName: Handgun@Shot01
       internalID: 0
       firstFrame: 0
